@@ -1,0 +1,95 @@
+<!--
+ * @Descripttion: 
+ * @Version: 
+ * @Author: sunliangzesmile
+ * @Date: 2020-04-04 13:51:17
+ * @LastEditors: sunliangzesmile
+ * @LastEditTime: 2020-04-06 13:06:00
+ -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>级联插件</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script src="./data.js"></script>
+    <script src="../caseselect.js"></script>
+    <script type="text/javascript">
+        // document.write("<script src=\"..\/caseselect.js?timestamp=" + 1 + "\"><\/script>");
+        $().ready(function() {
+            let caseInstance1 = $("#caseSelect1").caseSelect(options1 = {
+                data: function() {
+                    return data;
+                },
+                onBuildBefore: function() {
+                    console.log("start build");
+                },
+                onRenderSelect: function() {
+                    let div = document.createElement("div");
+                    return $(div).append(document.createElement("select"));
+                },
+                onBuildAfter: function() {
+                    console.log("end build");
+                },
+                onBuildCompleted: function() {
+                    console.log("complete build");
+                },
+                onSelected: function(elem, value) {
+                    console.log(caseInstance.getValue());
+                },
+            });
+            caseInstance1.setValue(["1185", "", "1251"]);
+            let caseInstance2 = caseSelect({
+                elem: "#caseSelect2",
+                value: ["1185", "", "1489"],
+                data: function() {
+                    return data;
+                },
+                onBuildBefore: function() {
+                    console.log("start build");
+                },
+                onBuildAfter: function() {
+                    console.log("end build");
+                },
+                onBuildCompleted: function() {
+                    console.log("complete build");
+                },
+                onSelected: function(elem, value) {
+                    console.log(value);
+                },
+            });
+            console.log(caseInstance2.getValue());
+            let caseInstance3 = $("#caseSelect3").caseSelect({
+                data: function() {
+                    return data;
+                },
+                multiple: true,
+                value: [
+                    ["825"],
+                    [],
+                    ["766", "148"]
+                ],
+                onBuildBefore: function() {
+                    console.log("start build");
+                },
+                onBuildAfter: function() {
+                    console.log("end build");
+                },
+                onBuildCompleted: function() {
+                    console.log("complete build");
+                },
+                onSelected: function(elem, value) {
+                    console.log(caseInstance.getValue());
+                },
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="caseSelect1">案例一：</div>
+    <div id="caseSelect2">案例二：</div>
+    <div id="caseSelect3">案例三：</div>
+</body>
+
+</html>
