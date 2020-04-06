@@ -4,7 +4,7 @@
  * @Author: sunliangzesmile
  * @Date: 2020-04-04 13:51:17
  * @LastEditors: sunliangzesmile
- * @LastEditTime: 2020-04-06 13:06:00
+ * @LastEditTime: 2020-04-06 13:28:15
  -->
 <html>
 
@@ -35,10 +35,11 @@
                     console.log("complete build");
                 },
                 onSelected: function(elem, value) {
-                    console.log(caseInstance.getValue());
+                    console.log(value);
                 },
             });
             caseInstance1.setValue(["1185", "", "1251"]);
+            caseInstance1.getValue();
             let caseInstance2 = caseSelect({
                 elem: "#caseSelect2",
                 value: ["1185", "", "1489"],
@@ -79,7 +80,7 @@
                     console.log("complete build");
                 },
                 onSelected: function(elem, value) {
-                    console.log(caseInstance.getValue());
+                    console.log(value);
                 },
             });
         });
