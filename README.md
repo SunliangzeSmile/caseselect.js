@@ -4,7 +4,7 @@
  * @Author: sunliangzesmile
  * @Date: 2020-04-06 12:16:51
  * @LastEditors: sunliangzesmile
- * @LastEditTime: 2020-04-06 13:07:11
+ * @LastEditTime: 2020-04-06 13:23:54
  -->
 # caseselect.js
 级联下拉框
@@ -21,6 +21,7 @@
 
 
 ## 案例
+[案例地址](https://sunliangzesmile.github.io/caseselect.js/example/index.html "案例")
 案例一：
 ```
 <script type="text/javascript" src="./data.js"></script>
